@@ -1,0 +1,184 @@
+<!-- TOP CONTACT + APPOINTMENT (OVERLAPPING) -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-card-main">
+      <p class="contact-label">Contact Now</p>
+      <h1 class="contact-heading">Get in touch</h1>
+      <p class="contact-desc">
+        We are your dedicated partners, offering a wealth of legal expertise across
+        diverse practice areas. From strategic counsel to decisive advocacy, we empower
+        individuals and businesses alike with unwavering dedication, ensuring your peace
+        of mind in every legal endeavor.
+      </p>
+
+      <ul class="contact-details">
+        <li>
+          <span class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span> <a href="mailto:anil@mandaassociates.in">anil&#64;mandaassociates.in</a></span>
+        </li>
+        <li>
+          <span class="contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </span>
+          <span><a href="tel:+918334984350"><strong>+91 83349 84350</strong></a></span>
+        </li>
+        <li>
+          <span class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+          <span> <a
+              href="https://www.google.com/maps?q=13+Crooked+Lane+Ajit+Sen+Bhawan+4th+Floor,+Kolkata+700069"
+              target="_blank"
+              rel="noopener"
+            >13 Crooked Lane Ajit Sen Bhawan 4th Floor, Kolkata 700069</a></span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Floating appointment card -->
+    <div class="appointment-card">
+      <h3 class="appointment-title">Make An Appointment</h3>
+      <div class="appointment-status" *ngIf="submitSuccess || submitError" aria-live="assertive">
+        <p class="status-message status-message--success" *ngIf="submitSuccess">{{ submitSuccess }}</p>
+        <p class="status-message status-message--error" *ngIf="submitError">{{ submitError }}</p>
+      </div>
+
+      <form class="appointment-form" #appointmentForm="ngForm" (ngSubmit)="onSubmit(appointmentForm)" novalidate>
+        <input type="hidden" name="subject" [(ngModel)]="formData.subject" />
+
+        <div class="form-group">
+          <label for="name">Name<span class="required">*</span></label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            minlength="2"
+            [(ngModel)]="formData.name"
+            #nameCtrl="ngModel"
+            [class.invalid]="nameCtrl.invalid && nameCtrl.touched"
+            placeholder="Your name"
+          />
+          <span class="field-error" *ngIf="nameCtrl.errors && nameCtrl.touched">Name is required.</span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email ID<span class="required">*</span></label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            [(ngModel)]="formData.email"
+            #emailCtrl="ngModel"
+            [class.invalid]="emailCtrl.invalid && emailCtrl.touched"
+            placeholder="Your email"
+          />
+          <span class="field-error" *ngIf="emailCtrl.errors && emailCtrl.touched">Valid email is required.</span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone<span class="required">*</span></label>
+          <input
+            id="phone"
+            type="tel"
+            name="phone"
+            required
+            pattern="^[0-9 +()-]{7,}$"
+            [(ngModel)]="formData.phone"
+            #phoneCtrl="ngModel"
+            [class.invalid]="phoneCtrl.invalid && phoneCtrl.touched"
+            placeholder="9876543210"
+          />
+          <span class="field-error" *ngIf="phoneCtrl.errors && phoneCtrl.touched">Phone number is required.</span>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            rows="4"
+            name="message"
+            required
+            minlength="8"
+            [(ngModel)]="formData.message"
+            #messageCtrl="ngModel"
+            [class.invalid]="messageCtrl.invalid && messageCtrl.touched"
+            placeholder="Type your message"
+          ></textarea>
+          <span class="field-error" *ngIf="messageCtrl.errors && messageCtrl.touched">Message is required.</span>
+        </div>
+        <button type="submit" class="appointment-btn" [disabled]="submitting">
+          <span *ngIf="!submitting">Book Appointment</span>
+          <span *ngIf="submitting">Submitting...</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / HERO WITH BG IMAGE (CARD OVERLAPS THIS) -->
+<section class="footer-hero">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <a routerLink="/">
+        <img class="footerlogo" src="https://devanttest.in/cs_test/assets/images/logo.webp" alt="MGA Associates" />
+      </a>
+      <h2 class="footer-heading">
+        Your Partners in<br />
+        Corporate Governance
+      </h2>
+
+      <div class="footer-findus">
+        <span>Find Us</span>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/service">Our Services</a></li>
+          <li><a routerLink="/gallery">Gallery</a></li>
+          <li><a routerLink="/practice-area">Practice Areas</a></li>
+          <li><a routerLink="/blog">Blog</a></li>
+          <li><a routerLink="/career">Careers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p class="footer-contact-line">
+          <i class="fas fa-phone-alt"></i>
+          <span>
+            <a href="tel:+918334984350"><strong>+91 83349 84350</strong></a>
+          </span>
+        </p>
+        <p class="footer-contact-line">
+          <i class="fas fa-envelope"></i>
+          <span>
+            <a href="mailto:anil@mandaassociates.in">anil&#64;mandaassociates.in</a>
+          </span>
+        </p>
+        <p class="footer-contact-line">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>
+            <a
+              href="https://www.google.com/maps?q=13+Crooked+Lane+Ajit+Sen+Bhawan+4th+Floor,+Kolkata+700069"
+              target="_blank"
+              rel="noopener"
+            >
+              13 Crooked Lane Ajit Sen Bhawan<br />
+              4th Floor, Kolkata 700069
+            </a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

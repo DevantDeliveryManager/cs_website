@@ -1,0 +1,295 @@
+<!-- ================= BANNER / HERO SECTION ================= -->
+<section class="ma-hero">
+  <!-- Big blue background / image wrapper -->
+  <div class="ma-hero-bg">
+    <!-- Background handled via CSS -->
+  </div>
+
+  <!-- Wave white shape at bottom -->
+  <div class="ma-hero-wave"></div>
+
+  <div class="ma-hero-inner">
+    <!-- LEFT TEXT AREA -->
+    <div class="ma-hero-left">
+      <h1 class="ma-hero-title">Careers</h1>
+    </div>
+    <!-- RIGHT IMAGE AREA -->
+  </div>
+</section>
+
+<!-- ============= CAREER LISTING SECTION ============= -->
+<section class="career-section">
+  <div class="career-inner">
+    <h2 class="career-heading">
+      Advance Your Career in Law &ndash; Apply Today!
+    </h2>
+
+    <!-- Filter / search bar -->
+    <div class="career-filters">
+      <label class="career-filter-input">
+        <span class="career-filter-icon">
+          <i class="far fa-calendar-alt"></i>
+        </span>
+        <input type="date" class="career-filter-field" [(ngModel)]="fromDate" placeholder="From Date" />
+      </label>
+
+      <label class="career-filter-input">
+        <span class="career-filter-icon">
+          <i class="far fa-calendar-alt"></i>
+        </span>
+        <input type="date" class="career-filter-field" [(ngModel)]="toDate" placeholder="To Date" />
+      </label>
+
+      <div class="career-filter-input career-filter-input--job">
+        <input type="text" class="career-filter-field career-filter-field--job" [(ngModel)]="searchTitle"
+          placeholder="Search Job Title" />
+        <span class="career-filter-dropdown">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+
+      <button class="career-search-btn" (click)="onSearch()">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+      </button>
+    </div>
+
+    <!-- Job cards grid -->
+    <div class="career-jobs-grid" *ngIf="!loading && visibleJobs.length; else noJobs">
+      <article class="career-job-card" *ngFor="let job of visibleJobs">
+        <div class="career-job-header">
+          <span class="career-job-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </span>
+          <h3 class="career-job-title">{{ job.title }}</h3>
+        </div>
+
+        <div class="career-job-meta">
+          <i class="far fa-calendar-alt"></i>
+          <span>{{ job.postedOn | date: 'dd MMM, yyyy' }}</span>
+        </div>
+
+        <p class="career-job-text">
+          {{ job.description }}
+        </p>
+
+        <!-- <button class="career-job-arrow">
+          <i class="fas fa-arrow-right"></i>
+        </button> -->
+      </article>
+    </div>
+    <ng-template #noJobs>
+      <p class="career-empty" *ngIf="!loading && !loadError">No career openings available.</p>
+      <p class="career-empty" *ngIf="loadError">{{ loadError }}</p>
+    </ng-template>
+
+    <!-- Load more -->
+    <div class="career-load-more-wrap" *ngIf="canLoadMore">
+      <button class="career-load-more" (click)="onLoadMore()">Load More</button>
+    </div>
+  </div>
+</section>
+
+<!-- =============faq=============== -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-grid">
+      <!-- 1 -->
+      <div class="faq-item active">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            1. What services are provided by a Company Secretary?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            A Company Secretary provides comprehensive corporate compliance and
+            advisory services, including company incorporation, ROC filings,
+            annual compliances, board and shareholder meeting management,
+            drafting of legal resolutions, maintenance of statutory registers,
+            corporate governance advisory, regulatory filings, and secretarial
+            audits.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            2. Why does a company need a Company Secretary?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            A Company Secretary ensures that a company complies with the
+            provisions of the Companies Act, SEBI regulations (where
+            applicable), and other corporate laws. This helps the company avoid
+            penalties, strengthen governance, and maintain transparency with
+            stakeholders.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            3. What is included in annual compliance services?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Annual compliance typically includes:</p>
+          <ul>
+            <li>
+              Preparation and filing of annual forms with the Registrar of
+              Companies
+            </li>
+            <li>
+              Drafting of Directors’ Report and statutory disclosures
+            </li>
+            <li>
+              Convening and documenting Board and Annual General Meetings
+            </li>
+            <li>
+              Maintenance of statutory registers and records
+            </li>
+            <li>Filing of event-based compliances</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            4. Can you assist with company incorporation?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Company Secretaries provide end-to-end support for company
+            incorporation, including name approval, drafting of MOA and AOA,
+            digital signature procurement, DIN services, and filing of
+            incorporation documents with the Registrar of Companies.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            5. Do you provide services for private, public, and listed
+            companies?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Services are provided to private limited companies, public
+            limited companies, unlisted public companies, listed companies,
+            LLPs, startups, and other corporate entities in accordance with
+            applicable laws and regulations.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            6. What are secretarial audit services?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Secretarial audit is a compliance audit conducted to evaluate
+            whether a company has complied with applicable corporate laws and
+            secretarial standards. It helps in identifying gaps, risks, and
+            areas of improvement in corporate governance practices.
+          </p>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            7. Can you handle SEBI and stock exchange compliances?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Support is provided for SEBI regulations and stock exchange
+            compliances, including listing obligations, disclosures, corporate
+            governance reporting, and periodic filings for listed entities.
+          </p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            8. Do you assist with funding, IPOs, and corporate restructuring?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Company Secretaries assist with private equity funding, venture
+            capital transactions, IPOs, rights issues, preferential allotments,
+            mergers, demergers, and other restructuring exercises.
+          </p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            9. What documents are required to start CS services?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Typically, the following documents are required:</p>
+          <ul>
+            <li>Certificate of Incorporation</li>
+            <li>PAN and TAN</li>
+            <li>MOA and AOA</li>
+            <li>List of Directors and Shareholders</li>
+            <li>Previous compliance records (if applicable)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            10. How are professional fees determined?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Professional fees are based on the scope of work, complexity of
+            services, frequency of filings, and the size and regulatory
+            structure of the organization. Transparent proposals are provided
+            before commencement of services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

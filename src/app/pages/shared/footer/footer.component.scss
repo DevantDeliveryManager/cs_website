@@ -1,0 +1,372 @@
+
+
+    /* ===== TOP CONTACT BLOCK ===== */
+
+    .contact-section {
+      position: relative;
+      padding: 40px 10px 0px; /* extra bottom so card can hang down */
+      background-color: #ffffff;
+      z-index: 2;
+    }
+
+    .contact-inner {
+
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .contact-card-main {
+      background-color: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+      padding: 40px 40px 46px;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #f49632;
+      margin-bottom: 10px;
+    }
+
+    .contact-heading {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .contact-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555555;
+      max-width: 720px;
+      margin-bottom: 26px;
+    }
+
+    .contact-details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-details li {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #333333;
+      margin-bottom: 12px;
+    }
+
+    .contact-details li:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+
+    .contact-icon i {
+      font-size: 16px;
+      color: #222222;
+    }
+
+    /* ===== APPOINTMENT CARD (OVERLAPS FOOTER) ===== */
+
+    .appointment-card {
+      position: absolute;
+      top: 0px;        /* adjust up/down */
+      right: 6%;        /* adjust left/right */
+      width: 360px;
+      background-color: #ffffff;
+      border-radius: 32px;
+      border: 1px solid #ebe5ff;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+      padding: 28px 26px 26px;
+      z-index: 3;       /* above footer */
+    }
+
+.appointment-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.appointment-status {
+  margin-bottom: 10px;
+}
+
+.status-message {
+  margin: 0 0 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+
+.status-message--success {
+  background: #ecfdf3;
+  border-color: #bbf7d0;
+  color: #166534;
+}
+
+.status-message--error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.appointment-form .form-group {
+  margin-bottom: 14px;
+}
+
+    .appointment-form label {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 5px;
+      color: #555555;
+    }
+
+    .required {
+      color: #e65b3b;
+      margin-left: 2px;
+    }
+
+.appointment-form input,
+.appointment-form textarea {
+  width: 100%;
+  font-size: 13px;
+  border-radius: 10px;
+  border: 1px solid #f5d7bd;
+  padding: 9px 10px;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+}
+
+    .appointment-form input::placeholder,
+    .appointment-form textarea::placeholder {
+      color: #b9b9b9;
+    }
+
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+  border-color: #f49632;
+}
+
+.appointment-form .invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.field-error {
+  display: block;
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 12px;
+}
+
+.appointment-btn {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+      background-color: #f49632;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .appointment-btn:hover {
+      background-color: #dd7f23;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    /* ===== FOOTER / HERO (MOVES UP UNDER THE CARD) ===== */
+
+    .footer-hero {
+
+      padding: 110px 20px 50px; /* extra top padding to compensate overlap */
+      color: #ffffff;
+background-image: linear-gradient(180deg, #050a1eb5, #020514fa), url(https://devanttest.in/cs_test/assets/images/footer-background.webp);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 70px;
+      margin-top: 90px;
+    }
+
+    .footer-left {
+      max-width: 420px;
+    }
+
+    .footer-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 12px;
+      opacity: 0.85;
+    }
+
+    .footer-heading {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 30px;
+      line-height: 1.3;
+    }
+
+    .footer-findus {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .footer-findus span {
+      margin-right: 6px;
+    }
+
+    .footer-findus a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      font-size: 13px;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .footer-findus a:hover {
+      background-color: #f49632;
+      transform: translateY(-1px);
+    }
+
+    .footer-cols {
+      display: flex;
+      gap: 70px;
+      margin-top: 32px;
+    }
+
+    .footer-col h4 {
+      font-size: 22px;
+    margin-bottom: 14px;
+    font-weight: 600;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col ul li {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .footer-col ul li a {
+      color: #e5e7f6;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .footer-col ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-contact-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .footer-contact-line i {
+      margin-top: 2px;
+      color: #f49632;
+    }
+
+    .footer-contact-line a {
+      color: #e5e7f6;
+      text-decoration: none;
+    }
+
+    .footer-contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RESPONSIVE ===== */
+
+    @media (max-width: 980px) {
+      .appointment-card {
+        position: static;
+        margin: 24px auto 0;
+        width: 100%;
+        max-width: 420px;
+      }
+
+      .contact-section {
+        padding-bottom: 40px;
+      }
+
+      .footer-hero {
+        margin-top: 0;
+        padding-top: 70px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .footer-cols {
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .contact-card-main {
+        padding: 26px 20px 32px;
+      }
+
+      .contact-heading {
+        font-size: 24px;
+      }
+
+      .footer-hero {
+        padding: 70px 16px 40px;
+      }
+
+      .footer-heading {
+        font-size: 24px;
+      }
+
+      .footer-cols {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+.footerlogo{
+      width: 155px;
+    margin-bottom: 17px;
+}

@@ -1,0 +1,93 @@
+<header class="ma-header">
+  <div class="ma-header-inner">
+    <!-- Logo -->
+    <a class="ma-logo" routerLink="/" (click)="closeMenu()">
+      <img src="https://devanttest.in/cs_test/assets/images/logo.webp" alt="MGA Associates" />
+   </a>
+
+    <!-- Mobile menu toggle -->
+    <button
+      class="ma-nav-toggle"
+      type="button"
+      (click)="isMenuOpen = !isMenuOpen"
+      aria-label="Toggle navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="ma-nav" [class.ma-nav-open]="isMenuOpen">
+      <a
+        class="ma-nav-link"
+        routerLink="/"
+        routerLinkActive="ma-nav-link-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="closeMenu()"
+        >Home</a
+      >
+      <a
+        class="ma-nav-link"
+        routerLink="/about"
+        routerLinkActive="ma-nav-link-active"
+        (click)="closeMenu()"
+        >About Us</a
+      >
+      <a
+        class="ma-nav-link"
+        routerLink="/service"
+        routerLinkActive="ma-nav-link-active"
+        (click)="closeMenu()"
+        >Our Services</a
+      >
+      <a
+        class="ma-nav-link"
+        routerLink="/practice-area"
+        routerLinkActive="ma-nav-link-active"
+        (click)="closeMenu()"
+        >Practice Areas</a
+      >
+      <a
+        class="ma-nav-link"
+        routerLink="/resources"
+        routerLinkActive="ma-nav-link-active"
+        (click)="closeMenu()"
+        >Resources</a
+      >
+      <a
+        class="ma-nav-link"
+        routerLink="/gallery"
+        routerLinkActive="ma-nav-link-active"
+        (click)="closeMenu()"
+        >Gallery</a
+      >
+      <a
+        class="ma-nav-link"
+        routerLink="/career"
+        routerLinkActive="ma-nav-link-active"
+        (click)="closeMenu()"
+        >Careers</a
+      >
+      <!-- Mobile-only Contact item -->
+      <a
+        class="ma-nav-link ma-nav-link-contact"
+        routerLink="/contactus"
+        routerLinkActive="ma-contact-active"
+        (click)="closeMenu()"
+        >Contact Us</a
+      >
+    </nav>
+
+    <!-- Contact Button -->
+    <div class="ma-header-cta">
+      <a
+        class="ma-contact-btn"
+        routerLink="/contactus"
+        routerLinkActive="ma-contact-active"
+        (click)="closeMenu()"
+        >Contact Us</a
+      >
+    </div>
+  </div>
+</header>

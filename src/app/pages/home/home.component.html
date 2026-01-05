@@ -1,0 +1,827 @@
+<!-- ================= BANNER / HERO SECTION ================= -->
+<section class="ma-hero">
+  <!-- Big blue background / image wrapper -->
+  <div class="ma-hero-bg">
+    <!-- Your blue background image (optional) -->
+    <!-- Put your background here if you want an image instead of gradient -->
+    <!-- Example: background-image is handled in CSS -->
+  </div>
+
+  <!-- Moving blur globe -->
+  <div class="ma-hero-globe-wrap">
+    <img src="https://devanttest.in/cs_test/assets/images/globe.webp" alt="Globe" class="ma-hero-globe" />
+  </div>
+
+  <!-- Wave white shape at bottom -->
+  <div class="ma-hero-wave"></div>
+
+  <div class="ma-hero-inner">
+    <!-- LEFT TEXT AREA -->
+    <div class="ma-hero-left">
+      <p class="ma-hero-tagline">Smart Accounting Solutions for Modern Businesses</p>
+
+      <h1 class="ma-hero-title">
+        Your Partners in<br />
+        Corporate Governance
+      </h1>
+
+      <div class="ma-hero-buttons">
+        <a class="ma-btn ma-btn-primary" routerLink="/service">Explore Now</a>
+        <a class="ma-btn ma-btn-outline" routerLink="/contactus">Book Appointment</a>
+      </div>
+
+      <div class="ma-hero-clients-row">
+        <div class="ma-hero-avatars">
+          <img src="https://devanttest.in/cs_test/assets/images/Group 8.webp" alt="Client 1" />
+
+        </div>
+        <span class="ma-hero-clients-text">1000+ Happy Clients in World</span>
+      </div>
+
+      <div class="ma-hero-social">
+        <span class="ma-hero-findus">Find Us</span><br>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE AREA -->
+    <div class="ma-hero-right">
+      <img src="https://devanttest.in/cs_test/assets/images/banner-man.webp" alt="Smiling man with calculator"
+        class="ma-hero-person" />
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ===============about-us============== -->
+<section class="abt-section">
+  <div class="abt-inner">
+
+    <!-- LEFT SIDE : main image + thumbs -->
+    <div class="abt-media">
+      <div class="abt-main">
+        <img src="https://devanttest.in/cs_test/assets/images/aboutma.webp" alt="Business meeting" />
+
+        <!-- Play button -->
+        <button class="abt-play">
+          <span>&#9658;</span>
+        </button>
+      </div>
+
+
+    </div>
+
+    <!-- RIGHT SIDE : text -->
+    <div class="abt-content">
+      <h3 class="abt-heading">About Us</h3>
+
+      <p class="abt-text">
+        Established in 2019, M&amp;A Associates embarked on its journey with a vision to deliver
+        expert corporate compliance and governance solutions. With dedication, professionalism,
+        and a client-first approach, we have grown steadily, earning the trust of businesses
+        across industries.
+      </p>
+
+      <p class="abt-text">
+        We are a dedicated Company Secretary firm on a mission to simplify corporate compliance
+        and governance for businesses of all sizes. With deep expertise in company law, we
+        specialize in Mergers &amp; Acquisitions, corporate structuring, and regulatory filings.
+        Our goal is to provide timely, accurate, and strategic solutions that help you stay
+        compliant and focus on growth.
+      </p>
+
+      <a class="abt-read" routerLink="/about">Read More</a>
+    </div>
+  </div>
+</section>
+<!-- ===============about-us============== -->
+<!-- ===============key-highlights============= -->
+<!-- Key Highlights SECTION -->
+<section class="kh-section">
+  <div class="kh-inner">
+    <h2 class="kh-title">Key Highlights</h2>
+
+    <div class="kh-grid">
+      <!-- Card 1 -->
+      <div class="kh-card">
+        <div class="kh-icon-wrap">
+          <div class="kh-icon-circle">
+            <i class="fa-solid fa-users"></i>
+          </div>
+        </div>
+        <h3 class="kh-card-title">
+          Qualified and<br />Experienced team
+        </h3>
+        <p class="kh-card-text">
+          Experienced team of Company Secretaries, Chartered Accountants and
+          Law Graduates join hands together to provide Value added services.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="kh-card">
+        <div class="kh-icon-wrap">
+          <div class="kh-icon-circle">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+        </div>
+        <h3 class="kh-card-title">One stop solution</h3>
+        <p class="kh-card-text">
+          From strategy to execution, we deliver end-to-end services tailored
+          to your goals. Save time and resources with our integrated approach—
+          no need to juggle multiple vendors.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="kh-card">
+        <div class="kh-icon-wrap">
+          <div class="kh-icon-circle">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+        </div>
+        <h3 class="kh-card-title">Value Addition</h3>
+        <p class="kh-card-text">
+          We don’t just meet expectations—we redefine them. Through innovative
+          solutions, cost efficiency, and relentless dedication, we deliver ROI
+          that speaks for itself.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========our-service=========== -->
+<section class="srv-section">
+  <div class="srv-inner">
+    <h2 class="srv-heading">Our Services</h2>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoadingServices" class="text-center py-5">
+      <p>Loading services...</p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="srv-grid" *ngIf="!isLoadingServices && services.length > 0">
+      <div class="srv-card" *ngFor="let service of services">
+        <div class="srv-image-wrap">
+          <img [src]="service.thumbnailUrl" [alt]="service.title" />
+        </div>
+
+        <h3 class="srv-title">{{ service.title }}</h3>
+        <p class="srv-text">
+          {{ getShortDescription(service.serviceDetail) }}
+        </p>
+
+        <a class="srv-btn" [routerLink]="['/service-details', service._id]">Explore Details</a>
+      </div>
+    </div>
+
+    <!-- Bottom Explore More button -->
+    <div class="srv-more-wrap">
+      <a class="srv-more-btn" routerLink="/service">Explore More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===============practice-area============== -->
+<section class="pa-section">
+  <div class="pa-inner">
+    <h2 class="pa-heading">Practice Areas</h2>
+
+    <div class="pa-grid">
+      <!-- CARD 1 -->
+      <div class="pa-card">
+        <div class="pa-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/p1.gif" alt="Corporate Law" />
+        </div>
+        <div class="pa-content">
+          <h3 class="pa-title">Corporate Law &amp; Governance</h3>
+          <p class="pa-text">
+            Company incorporation (Private, Public, LLP, OPC). Drafting of MOA,
+            AOA, and Shareholders’ agreements. Conducting Board and General
+            Meetings, drafting Board resolutions &amp; minutes, maintenance of
+            statutory registers &amp; records, annual compliances &amp; e-forms.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="pa-card">
+        <div class="pa-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/p2.gif" alt="Corporate Law" />
+        </div>
+        <div class="pa-content">
+          <h3 class="pa-title">International Arbitration</h3>
+          <p class="pa-text">
+            Our International Arbitration team provides strategic guidance in
+            resolving cross-border disputes efficiently and effectively, ensuring
+            your interests are protected on a global scale.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="pa-card">
+        <div class="pa-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/p3.gif" alt="Corporate Law" />
+        </div>
+        <div class="pa-content">
+          <h3 class="pa-title">Mergers, Acquisitions &amp; Restructuring</h3>
+          <p class="pa-text">
+            Due diligence, restructuring, scheme drafting &amp; NCLT filings,
+            business restructuring &amp; demergers, share transfers and
+            valuation support.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="pa-card">
+        <div class="pa-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/p4.gif" alt="Corporate Law" />
+        </div>
+        <div class="pa-content">
+          <h3 class="pa-title">FEMA &amp; RBI Compliance</h3>
+          <p class="pa-text">
+            FDI reporting (FC-GPR, FC-TRS), ODI &amp; ECB compliance, liaison /
+            branch office setup for foreign companies, RBI approvals and
+            advisory.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="pa-card">
+        <div class="pa-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/p5.gif" alt="Corporate Law" />
+        </div>
+        <div class="pa-content">
+          <h3 class="pa-title">Secretarial Audit &amp; Certifications</h3>
+          <p class="pa-text">
+            Secretarial audit under Companies Act, 2013, compliance
+            certifications, MGT-7A, annual secretarial compliance report,
+            corporate governance reports, internal audit and risk analysis.
+          </p>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="pa-card">
+        <div class="pa-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/p6.gif" alt="Corporate Law" />
+        </div>
+        <div class="pa-content">
+          <h3 class="pa-title">Legal Drafting &amp; Opinions</h3>
+          <p class="pa-text">
+            Shareholders’ agreements, NDAs, ESOP schemes, notices, affidavits,
+            legal opinions, lease agreements and business contracts tailored to
+            your requirements.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pa-more-wrap">
+      <a class="pa-more-btn" routerLink="/practice-area">Explore More</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==============Process Success=================-->
+<section class="legal-process-section">
+  <div class="lp-container">
+    <h2 class="lp-heading">Our Streamlined Legal Process Success</h2>
+    <p class="lp-subtitle">
+      Our streamlined legal process is designed to ensure client success by providing efficient and effective legal
+      services.
+    </p>
+
+    <div class="lp-grid">
+      <!-- Card 1 -->
+      <article class="lp-card">
+        <div class="lp-image-wrapper">
+          <!-- BIG IMAGE (no background in CSS) -->
+          <img src="https://devanttest.in/cs_test/assets/images/Mask group (9)-1763535478352-2557.webp"
+            alt="Consultation" class="lp-main-img" />
+          <!-- CIRCLE ICON OVERLAP -->
+          <div class="lp-icon-circle">
+            <img src="https://devanttest.in/cs_test/assets/images/ps1.gif" alt="Consultation icon" />
+          </div>
+        </div>
+
+        <div class="lp-content">
+          <h3 class="lp-title lp-title-1">Consultation</h3>
+          <p class="lp-text">
+            Begin by discussing your requirements with us. Our experts will
+            delve into the details, understanding your needs and challenges.
+            This initial phase sets the foundation for our collaboration.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="lp-card">
+        <div class="lp-image-wrapper">
+          <img src="https://devanttest.in/cs_test/assets/images/Mask group (10)-1763535478352-2234.webp"
+            alt="Strategize" class="lp-main-img" />
+          <div class="lp-icon-circle">
+            <img src="https://devanttest.in/cs_test/assets/images/ps2.gif" alt="Strategize icon" />
+          </div>
+        </div>
+
+        <div class="lp-content">
+          <h3 class="lp-title lp-title-1">Strategize</h3>
+          <p class="lp-text">
+            We develop a strategic plan tailored to your specific situation.
+            Our experienced team combines industry knowledge with innovative
+            thinking to formulate a roadmap for success.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="lp-card">
+        <div class="lp-image-wrapper">
+          <img src="https://devanttest.in/cs_test/assets/images/Mask group (11)-1763535478353-757.webp"
+            alt="Take Action" class="lp-main-img" />
+          <div class="lp-icon-circle">
+            <img src="https://devanttest.in/cs_test/assets/images/ps3.gif" alt="Take action icon" />
+          </div>
+        </div>
+
+        <div class="lp-content">
+          <h3 class="lp-title lp-title-1">Take Action</h3>
+          <p class="lp-text">
+            Our proactive approach ensures that your plans are executed
+            seamlessly. We guide you through each step, providing the support
+            needed to turn strategies into tangible results.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!--========================= whychooseus============================= -->
+<section class="why-choose-section">
+  <div class="why-choose-container">
+    <!-- LEFT SIDE: TEXT + STAR LIST -->
+    <div class="why-choose-left">
+      <h2 class="why-choose-title">Why Choose Us</h2>
+
+      <div class="why-choose-list">
+        <!-- Column 1 -->
+        <div class="why-choose-col">
+          <div class="why-choose-item">
+            <span class="why-choose-icon">
+              <img src="https://devanttest.in/cs_test/assets/images/bi_star-fill.webp" alt="Star" />
+            </span>
+            <span class="why-choose-text">Client-Centric Approach</span>
+          </div>
+
+          <div class="why-choose-item">
+            <span class="why-choose-icon">
+              <img src="https://devanttest.in/cs_test/assets/images/bi_star-fill.webp" alt="Star" />
+            </span>
+            <span class="why-choose-text">100% Confidentiality</span>
+          </div>
+
+          <div class="why-choose-item">
+            <span class="why-choose-icon">
+              <img src="https://devanttest.in/cs_test/assets/images/bi_star-fill.webp" alt="Star" />
+            </span>
+            <span class="why-choose-text">Professional Expertise</span>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="why-choose-col">
+          <div class="why-choose-item">
+            <span class="why-choose-icon">
+              <img src="https://devanttest.in/cs_test/assets/images/bi_star-fill.webp" alt="Star" />
+            </span>
+            <span class="why-choose-text">Deep Legal &amp; Corporate Knowledge</span>
+          </div>
+
+          <div class="why-choose-item">
+            <span class="why-choose-icon">
+              <img src="https://devanttest.in/cs_test/assets/images/bi_star-fill.webp" alt="Star" />
+            </span>
+            <span class="why-choose-text">PAN India Support</span>
+          </div>
+
+          <div class="why-choose-item">
+            <span class="why-choose-icon">
+              <img src="https://devanttest.in/cs_test/assets/images/bi_star-fill.webp" alt="Star" />
+            </span>
+            <span class="why-choose-text">Transparency</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: ROUNDED IMAGE -->
+    <div class="why-choose-right">
+      <div class="why-choose-image-wrap">
+        <img src="https://devanttest.in/cs_test/assets/images/whychoosema.webp" alt="Why Choose Us"
+          class="why-choose-image" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================meet the founder================= -->
+<section class="founders-section">
+  <div class="founders-container">
+    <h2 class="founders-heading">Meet The Founders</h2>
+    <p class="founders-subtitle">
+      Our founders began with a bold vision to build a legacy of trust and impact.
+      Their journey proves what passion and purpose can achieve.
+    </p>
+
+    <!-- Founder 1 -->
+    <div class="founder-row">
+      <div class="founder-photo-box">
+        <img src="https://devanttest.in/cs_test/assets/images/Mask group (12)-1763538315561-1292.webp"
+          alt="Anil Kumar Dubey" />
+      </div>
+
+      <div class="founder-content">
+        <h3 class="founder-name">
+          Anil Kumar Dubey
+          <span class="founder-suffix">CS</span>
+        </h3>
+
+        <p class="founder-title">
+          Fellow Member of ICSI, Practising Company Secretary.<br />
+          Registered Valuer (SFA), Qualified IP.
+        </p>
+
+        <p class="founder-bio">
+          LL.B. Author, Member of Eastern India Regional Council of ICSI. He
+          specializes in Company Law, Valuation Services, Securities Laws, RBI
+          Laws, FDI, Venture Capital, Insolvency Matters and NCLT. A renowned
+          speaker, he has addressed over 100 seminars on various topics.
+        </p>
+      </div>
+    </div>
+
+    <!-- Founder 2 -->
+    <div class="founder-row founder-row-reverse">
+      <div class="founder-photo-box">
+        <img src="https://devanttest.in/cs_test/assets/images/Mask group (13)-1763538315561-5878.webp"
+          alt="Vivek Mishra" />
+      </div>
+      <div class="founder-content">
+        <h3 class="founder-name">
+          Vivek Mishra
+          <span class="founder-suffix">CS</span>
+        </h3>
+
+        <p class="founder-title">
+          Fellow Member of ICSI, Practising Company Secretary.<br />
+          LL.B., LL.M, M.Com, FCS, ACMA.
+        </p>
+
+        <p class="founder-bio">
+          He has authored various articles on the Companies Act, Insolvency &amp;
+          Bankruptcy Law, IPR–Trademark, CSR, and Independent Directors.
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===============get-direction================== -->
+<!-- OUR OFFICE LOCATIONS -->
+<section class="office-locations-section">
+  <div class="office-locations-inner">
+    <h2 class="office-title">Our Office Locations</h2>
+
+    <div class="office-grid">
+      <!-- Kolkata -->
+      <div class="office-card">
+        <div class="office-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/Vector.webp" alt="Office icon" />
+        </div>
+        <h3 class="office-city">Kolkata</h3>
+        <p class="office-address">
+          &nbsp;13 Crooked Lane ,&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ajit Sen Bhawan 4th
+          Floor,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kolkata
+          700069 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+        <a href="https://www.google.com/maps?q=13+Crooked+Lane+Ajit+Sen+Bhawan+4th+Floor,+Kolkata+700069"
+          target="_blank" class="office-btn">
+          Get Direction
+        </a>
+      </div>
+
+      <!-- Mumbai -->
+      <div class="office-card">
+        <div class="office-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/Vector.webp" alt="Office icon" />
+        </div>
+        <h3 class="office-city">Mumbai</h3>
+        <p class="office-address">
+          502, Atlanta Estate ,<br />Near Virvani Industrial Estate,<br />
+          Goregaon (East), Mumbai-400063
+        </p>
+        <a href="https://www.google.com/maps?q=502,+Atlanta+Estate+Near+Virvani+Industrial+Estate,+Goregaon+(East),+Mumbai+400063"
+          target="_blank" class="office-btn">
+          Get Direction
+        </a>
+      </div>
+
+      <!-- Bangalore -->
+      <div class="office-card">
+        <div class="office-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/Vector.webp" alt="Office icon" />
+        </div>
+        <h3 class="office-city">Bangalore</h3>
+        <p class="office-address">
+          301A, Brooklyn Apartment,<br />
+          15A Rear Basement Room No. 63,<br />
+          Banaswadi Road, Bangalore-560053
+        </p>
+        <a href="https://www.google.com/maps?q=301A+Brooklyn+Apartment+15A+Rear+Basement+Room+No+63,+Banaswadi+Road,+Bangalore+560053"
+          target="_blank" class="office-btn">
+          Get Direction
+        </a>
+      </div>
+
+      <!-- New Delhi -->
+      <div class="office-card">
+        <div class="office-icon-circle">
+          <img src="https://devanttest.in/cs_test/assets/images/Vector.webp" alt="Office icon" />
+        </div>
+        <h3 class="office-city">New Delhi</h3>
+        <p class="office-address">
+          308-309, Vardhman Fortune Mall,<br />
+          Opposite Hans Cinema, GT Karnal<br /> Road,
+          Azadpur, New Delhi-110033
+        </p>
+        <a href="https://www.google.com/maps?q=308-309+Vardhman+Fortune+Mall,+Opposite+Hans+Cinema,+GT+Karnal+Road,+Azadpur,+New+Delhi+110033"
+          target="_blank" class="office-btn">
+          Get Direction
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===============client-testimonials================== -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <h2 class="testimonials-title">Client's Testimonials</h2>
+
+    <div class="testimonials-carousel" *ngIf="testimonials.length">
+      <button type="button" class="testimonials-nav is-prev" (click)="prevTestimonial()"
+        [disabled]="activeTestimonialIndex === 0" aria-label="Previous testimonial">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="testimonials-window">
+        <div class="testimonials-track" [style.transform]="'translateX(-' + activeTestimonialIndex * 100 + '%)'">
+          <article class="testimonial-card" *ngFor="let item of testimonials">
+            <div class="testimonial-photo">
+              <img [src]="item.photo" [alt]="item.name" />
+            </div>
+            <div class="testimonial-body">
+              <h3 class="testimonial-name">{{ item.name }}</h3>
+              <p class="testimonial-role" *ngIf="item.role">{{ item.role }}</p>
+              <p class="testimonial-text">
+                {{ item.text }}
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button type="button" class="testimonials-nav is-next" (click)="nextTestimonial()"
+        [disabled]="activeTestimonialIndex === testimonials.length - 1" aria-label="Next testimonial">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="testimonials-dots" *ngIf="testimonials.length > 1">
+      <button type="button" class="testimonials-dot" *ngFor="let item of testimonials; let i = index"
+        [class.is-active]="i === activeTestimonialIndex" (click)="goToTestimonial(i)"
+        [attr.aria-label]="'Go to testimonial ' + (i + 1)"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===============faq-section================== -->
+
+<section class="faq-section">
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-grid">
+      <!-- 1 -->
+      <div class="faq-item active">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            1. What services are provided by a Company Secretary?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            A Company Secretary provides comprehensive corporate compliance and
+            advisory services, including company incorporation, ROC filings,
+            annual compliances, board and shareholder meeting management,
+            drafting of legal resolutions, maintenance of statutory registers,
+            corporate governance advisory, regulatory filings, and secretarial
+            audits.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            2. Why does a company need a Company Secretary?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            A Company Secretary ensures that a company complies with the
+            provisions of the Companies Act, SEBI regulations (where
+            applicable), and other corporate laws. This helps the company avoid
+            penalties, strengthen governance, and maintain transparency with
+            stakeholders.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            3. What is included in annual compliance services?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Annual compliance typically includes:</p>
+          <ul>
+            <li>
+              Preparation and filing of annual forms with the Registrar of
+              Companies
+            </li>
+            <li>
+              Drafting of Directors’ Report and statutory disclosures
+            </li>
+            <li>
+              Convening and documenting Board and Annual General Meetings
+            </li>
+            <li>
+              Maintenance of statutory registers and records
+            </li>
+            <li>Filing of event-based compliances</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            4. Can you assist with company incorporation?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Company Secretaries provide end-to-end support for company
+            incorporation, including name approval, drafting of MOA and AOA,
+            digital signature procurement, DIN services, and filing of
+            incorporation documents with the Registrar of Companies.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            5. Do you provide services for private, public, and listed
+            companies?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Services are provided to private limited companies, public
+            limited companies, unlisted public companies, listed companies,
+            LLPs, startups, and other corporate entities in accordance with
+            applicable laws and regulations.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            6. What are secretarial audit services?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Secretarial audit is a compliance audit conducted to evaluate
+            whether a company has complied with applicable corporate laws and
+            secretarial standards. It helps in identifying gaps, risks, and
+            areas of improvement in corporate governance practices.
+          </p>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            7. Can you handle SEBI and stock exchange compliances?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Support is provided for SEBI regulations and stock exchange
+            compliances, including listing obligations, disclosures, corporate
+            governance reporting, and periodic filings for listed entities.
+          </p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            8. Do you assist with funding, IPOs, and corporate restructuring?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes. Company Secretaries assist with private equity funding, venture
+            capital transactions, IPOs, rights issues, preferential allotments,
+            mergers, demergers, and other restructuring exercises.
+          </p>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            9. What documents are required to start CS services?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>Typically, the following documents are required:</p>
+          <ul>
+            <li>Certificate of Incorporation</li>
+            <li>PAN and TAN</li>
+            <li>MOA and AOA</li>
+            <li>List of Directors and Shareholders</li>
+            <li>Previous compliance records (if applicable)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="faq-item">
+        <div class="faq-header">
+          <div class="faq-icon">+</div>
+          <div class="faq-question">
+            10. How are professional fees determined?
+          </div>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Professional fees are based on the scope of work, complexity of
+            services, frequency of filings, and the size and regulatory
+            structure of the organization. Transparent proposals are provided
+            before commencement of services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

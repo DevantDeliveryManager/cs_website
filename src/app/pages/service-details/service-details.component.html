@@ -1,0 +1,100 @@
+<!-- ================= BANNER / HERO SECTION ================= -->
+<section class="ma-hero">
+  <!-- Big blue background / image wrapper -->
+  <div class="ma-hero-bg">
+    <!-- Background handled via CSS -->
+  </div>
+
+  <!-- Wave white shape at bottom -->
+  <div class="ma-hero-wave"></div>
+
+  <div class="ma-hero-inner">
+    <!-- LEFT TEXT AREA -->
+    <div class="ma-hero-left">
+      <h1 class="ma-hero-title">{{ service?.title || 'Service Details' }}</h1>
+    </div>
+    <!-- RIGHT IMAGE AREA -->
+  </div>
+</section>
+
+<!-- Loading State -->
+<div *ngIf="isLoading" class="text-center py-5">
+  <p>Loading service details...</p>
+</div>
+
+<!-- Error State -->
+<div *ngIf="error && !isLoading" class="alert alert-danger text-center">
+  <p>{{ error }}</p>
+</div>
+
+<!-- ============== Overview Media Section ============== -->
+<section class="sd-overview" *ngIf="service && !isLoading">
+  <div class="sd-inner">
+    <div class="sd-media-card">
+      <div class="sd-media-image">
+        <img [src]="service.thumbnailUrl" [alt]="service.title" />
+        <button type="button" class="sd-play-btn" aria-label="Play overview video">
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+      <div class="sd-media-content">
+        <h2 class="sd-title">{{ service.title }}</h2>
+        <p class="sd-text">
+          {{ getShortDescription(service.serviceDetail) }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===============Service Details Section============== -->
+<section class="abt-section" *ngIf="service && !isLoading">
+  <div class="abt-inner">
+    <!-- Service Detail Content -->
+    <div class="abt-content">
+      <h3 class="abt-heading">Service Details</h3>
+      <div [innerHTML]="service.serviceDetail"></div>
+    </div>
+  </div>
+</section>
+<!-- ===============Service Details Section============== -->
+<!-- ===============Hot Points Section============== -->
+<section class="abt-section" *ngIf="service && !isLoading && service.hotPoints && service.hotPoints.length > 0">
+  <div class="abt-inner">
+    <!-- LEFT SIDE : main image + thumbs -->
+    <div class="abt-media">
+      <div class="abt-main">
+        <img [src]="service.thumbnailUrl" [alt]="service.title" />
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE : Key Features -->
+    <div class="abt-content">
+      <h3 class="abt-heading">Key Features</h3>
+      <ul class="abt-list">
+        <li *ngFor="let point of service.hotPoints" class="abt-text">
+          <i class="fas fa-check-circle"></i> {{ point }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ===============Hot Points Section============== -->
+
+
+<!-- ===============Why Choose This Service Section============== -->
+<section class="abt-section" *ngIf="service && !isLoading && service.whyChooseThisService">
+  <div class="abt-inner">
+    <!-- RIGHT SIDE : text -->
+    <div class="abt-content">
+      <div [innerHTML]="service.whyChooseThisService"></div>
+    </div>
+
+    <!-- LEFT SIDE : main image + thumbs -->
+    <div class="abt-media">
+      <div class="abt-main">
+        <img [src]="service.thumbnailUrl" [alt]="service.title" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===============Why Choose This Service Section============== -->

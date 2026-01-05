@@ -1,0 +1,135 @@
+<!-- ================= BANNER / HERO SECTION ================= -->
+<section class="ma-hero">
+  <!-- Big blue background / image wrapper -->
+  <div class="ma-hero-bg">
+    <!-- Background handled via CSS -->
+  </div>
+
+  <!-- Wave white shape at bottom -->
+  <div class="ma-hero-wave"></div>
+
+  <div class="ma-hero-inner">
+    <!-- LEFT TEXT AREA -->
+    <div class="ma-hero-left">
+      <h1 class="ma-hero-title">Gallery</h1>
+    </div>
+    <!-- RIGHT IMAGE AREA -->
+  </div>
+</section>
+
+<!-- ================= COVERFLOW GALLERY SLIDER ================= -->
+<h2 class="trs-heading">Our Team</h2>
+<section class="gallery-coverflow-section">
+
+  <div class="gallery-coverflow-inner">
+    <button class="gallery-arrow gallery-arrow-left" (click)="prevImage()">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <div class="gallery-coverflow-track">
+      <ng-container *ngIf="displayItems.length; else noSliderItems">
+        <div
+          class="gallery-card"
+          *ngFor="let item of displayItems; let i = index"
+          [ngClass]="getPositionClass(i)"
+        >
+          <img [src]="item.src" [alt]="item.alt" />
+        </div>
+      </ng-container>
+      <ng-template #noSliderItems>
+        <p class="gallery-empty">No team photos available.</p>
+      </ng-template>
+    </div>
+
+    <button class="gallery-arrow gallery-arrow-right" (click)="nextImage()">
+      <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+</section>
+
+
+<!-- ============gallery-grid============= -->
+  <section class="gallery1-section">
+    <div class="gallery1-container">
+      <h2 class="gallery1-heading">Explore Our Latest Gallery</h2>
+
+      <div class="gallery1-grid" *ngIf="galleryItems.length; else noGridItems">
+        <div
+          class="gallery1-item"
+          *ngFor="let item of galleryItems | slice: 0 : visibleGalleryItemsCount"
+        >
+          <img [src]="item.src" [alt]="item.alt || 'Gallery image'">
+        </div>
+      </div>
+      <ng-template #noGridItems>
+        <p class="gallery-empty">No gallery items available.</p>
+      </ng-template>
+    </div>
+    <button
+      class="em-load-more-btn"
+      *ngIf="hasHiddenGalleryItems"
+      (click)="showMoreGalleryItems()"
+    >
+      Load More
+    </button>
+  </section>
+
+<!-- ===============client-testimonials================== -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <h2 class="testimonials-title">Client's Testimonials</h2>
+
+    <div class="testimonials-carousel" *ngIf="testimonials.length">
+      <button
+        type="button"
+        class="testimonials-nav is-prev"
+        (click)="prevTestimonial()"
+        [disabled]="activeTestimonialIndex === 0"
+        aria-label="Previous testimonial"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="testimonials-window">
+        <div
+          class="testimonials-track"
+          [style.transform]="'translateX(-' + activeTestimonialIndex * 100 + '%)'"
+        >
+          <article class="testimonial-card" *ngFor="let item of testimonials">
+            <div class="testimonial-photo">
+              <img [src]="item.photo" [alt]="item.name" />
+            </div>
+            <div class="testimonial-body">
+              <h3 class="testimonial-name">{{ item.name }}</h3>
+              <p class="testimonial-role" *ngIf="item.role">{{ item.role }}</p>
+              <p class="testimonial-text">
+                {{ item.text }}
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="testimonials-nav is-next"
+        (click)="nextTestimonial()"
+        [disabled]="activeTestimonialIndex === testimonials.length - 1"
+        aria-label="Next testimonial"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="testimonials-dots" *ngIf="testimonials.length > 1">
+      <button
+        type="button"
+        class="testimonials-dot"
+        *ngFor="let item of testimonials; let i = index"
+        [class.is-active]="i === activeTestimonialIndex"
+        (click)="goToTestimonial(i)"
+        [attr.aria-label]="'Go to testimonial ' + (i + 1)"
+      ></button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,125 @@
+<!-- ================= BANNER / HERO SECTION ================= -->
+<section class="ma-hero">
+  <!-- Big blue background / image wrapper -->
+  <div class="ma-hero-bg">
+    <!-- Your blue background image (optional) -->
+    <!-- Put your background here if you want an image instead of gradient -->
+    <!-- Example: background-image is handled in CSS -->
+  </div>
+
+
+
+  <!-- Wave white shape at bottom -->
+  <div class="ma-hero-wave"></div>
+
+  <div class="ma-hero-inner">
+    <!-- LEFT TEXT AREA -->
+    <div class="ma-hero-left">
+
+
+      <h1 class="ma-hero-title">
+        Our Services
+      </h1>
+
+
+
+
+
+    </div>
+
+    <!-- RIGHT IMAGE AREA -->
+
+  </div>
+</section>
+
+
+<!-- ==========our-service=========== -->
+<section class="srv-section">
+  <div class="srv-inner">
+    <h2 class="srv-heading">Our Services</h2>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="srv-loading">
+      <p>Loading services...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error && !isLoading" class="srv-error">
+      <p>{{ error }}</p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="srv-grid" *ngIf="!isLoading && !error">
+      <div class="srv-card" *ngFor="let service of services">
+        <div class="srv-image-wrap">
+          <img [src]="service.thumbnailUrl" [alt]="service.title" />
+        </div>
+
+        <h3 class="srv-title">{{ service.title }}</h3>
+        <p class="srv-text">
+          {{ getShortDescription(service.serviceDetail) }}
+        </p>
+
+        <a [routerLink]="['/service-details', service._id]" class="srv-btn">Explore Details</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===============key-highlights============= -->
+<!-- Key Highlights SECTION -->
+<section class="kh-section">
+  <div class="kh-inner">
+    <h2 class="kh-title">Key Highlights</h2>
+
+    <div class="kh-grid">
+      <!-- Card 1 -->
+      <div class="kh-card">
+        <div class="kh-icon-wrap">
+          <div class="kh-icon-circle">
+            <i class="fa-solid fa-users"></i>
+          </div>
+        </div>
+        <h3 class="kh-card-title">
+          Qualified and<br />Experienced team
+        </h3>
+        <p class="kh-card-text">
+          Experienced team of Company Secretaries, Chartered Accountants and
+          Law Graduates join hands together to provide Value added services.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="kh-card">
+        <div class="kh-icon-wrap">
+          <div class="kh-icon-circle">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+        </div>
+        <h3 class="kh-card-title">One stop solution</h3>
+        <p class="kh-card-text">
+          From strategy to execution, we deliver end-to-end services tailored
+          to your goals. Save time and resources with our integrated approach—
+          no need to juggle multiple vendors.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="kh-card">
+        <div class="kh-icon-wrap">
+          <div class="kh-icon-circle">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+        </div>
+        <h3 class="kh-card-title">Value Addition</h3>
+        <p class="kh-card-text">
+          We don’t just meet expectations—we redefine them. Through innovative
+          solutions, cost efficiency, and relentless dedication, we deliver ROI
+          that speaks for itself.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

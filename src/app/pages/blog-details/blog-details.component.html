@@ -1,0 +1,70 @@
+<!-- ===============================inner-bannerstrat================================ -->
+<section class="page-title" style="background-image: url('https://devanttest.in/cs_test/assets/images/page-title-bg.webp');">
+  <div class="container">
+    <div class="title-outer text-center">
+      <h1 class="title">{{ blog?.title || 'Blog Details' }}</h1>
+      <ul class="page-breadcrumb">
+        <li><a routerLink="/">Home <i class="fas fa-angle-right innerpageicon"></i></a></li>
+        <li><a routerLink="/blog">Blog <i class="fas fa-angle-right innerpageicon"></i></a></li>
+        <li>{{ blog?.title || 'Details' }}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ===============================inner-bannerend================================ -->
+
+<!-- ===============================blog-detailsarea=============================== -->
+<section class="blog-details mrblog">
+  <div class="container">
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="text-center py-5">
+      <p>Loading blog details...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error && !isLoading" class="alert alert-danger">
+      <p>{{ error }}</p>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="row" *ngIf="blog && !isLoading">
+      <div class="col-xl-8 col-lg-7">
+        <div class="blog-details__left">
+          <div class="blog-details__img">
+            <img loading="lazy" [src]="blog.featureImageUrl" [alt]="blog.title">
+            <div class="blog-details__date">
+              <span class="day">{{ formatDate(blog.createdAt).day }}</span>
+              <span class="month">{{ formatDate(blog.createdAt).month }}</span>
+            </div>
+          </div>
+          <div class="blog-details__content">
+            <h3 class="blog-details__title">{{ blog.title }}</h3>
+            <div [innerHTML]="blog.description"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-lg-5">
+        <div class="sidebar">
+          <div class="sidebar__single sidebar__post">
+            <h3 class="sidebar__title">Related Posts</h3>
+            <ul class="sidebar__post-list list-unstyled" *ngIf="relatedBlogs.length > 0">
+              <li *ngFor="let relatedBlog of relatedBlogs">
+                <div class="sidebar__post-image">
+                  <img loading="lazy" [src]="relatedBlog.featureImageUrl" [alt]="relatedBlog.title">
+                </div>
+                <div class="sidebar__post-content">
+                  <h3>
+                    <a [routerLink]="['/blog-details', relatedBlog.slug]">{{ relatedBlog.title }}</a>
+                  </h3>
+                </div>
+              </li>
+            </ul>
+            <p *ngIf="relatedBlogs.length === 0" class="text-muted">No related posts available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===============================blog-detailsarea=============================== -->

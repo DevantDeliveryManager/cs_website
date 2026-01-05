@@ -1,0 +1,58 @@
+<!-- ================= BANNER / HERO SECTION ================= -->
+<section class="ma-hero">
+  <!-- Big blue background / image wrapper -->
+  <div class="ma-hero-bg">
+    <!-- Background handled via CSS -->
+  </div>
+
+  <!-- Wave white shape at bottom -->
+  <div class="ma-hero-wave"></div>
+
+  <div class="ma-hero-inner">
+    <!-- LEFT TEXT AREA -->
+    <div class="ma-hero-left">
+      <h1 class="ma-hero-title">Blog</h1>
+    </div>
+    <!-- RIGHT IMAGE AREA -->
+  </div>
+</section>
+
+
+<!-- ==================blog================ -->
+<section class="latest-blog">
+  <div class="latest-blog-container">
+    <h2 class="latest-blog-title">Explore Our Latest Blogs </h2>
+
+    <!-- Loading State -->
+    <div *ngIf="isLoading" class="text-center py-5">
+      <p>Loading blogs...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error && !isLoading" class="alert alert-danger text-center">
+      <p>{{ error }}</p>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid" *ngIf="!isLoading && !error">
+      <article class="blog-item" *ngFor="let blog of blogs">
+        <div class="blog-image">
+          <img [src]="blog.featureImageUrl" [alt]="blog.title">
+        </div>
+        <div class="blog-content">
+          <div class="blog-date">
+            <span class="calendar-icon"><i class="fa-solid fa-calendar"></i></span>
+            <span>{{ formatDate(blog.createdAt).day }} {{ formatDate(blog.createdAt).month }}, {{ formatDate(blog.createdAt).year }}</span>
+          </div>
+          <h3 class="blog-heading">
+            {{ blog.title }}
+          </h3>
+          <p class="blog-text">
+            {{ blog.shortDescription }}
+          </p>
+          <a [routerLink]="['/blog-details', blog.slug]" class="blog-btn">Read More</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

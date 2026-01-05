@@ -1,0 +1,102 @@
+
+<!-- ================= BANNER / HERO SECTION ================= -->
+<section class="ma-hero">
+  <!-- Big blue background / image wrapper -->
+  <div class="ma-hero-bg">
+    <!-- Background handled via CSS -->
+  </div>
+
+  <!-- Wave white shape at bottom -->
+  <div class="ma-hero-wave"></div>
+
+  <div class="ma-hero-inner">
+    <!-- LEFT TEXT AREA -->
+    <div class="ma-hero-left">
+      <h1 class="ma-hero-title">Video Lectures & Podcasts</h1>
+    </div>
+    <!-- RIGHT IMAGE AREA -->
+  </div>
+</section>
+
+<section class="video-section">
+  <div class="video-container">
+    <h2 class="video-heading">Explore Our Video Lectures &amp; Podcasts</h2>
+
+    <!-- big video -->
+    <div class="video-main-card" *ngIf="selectedLecture; else noLectures">
+      <ng-container *ngIf="selectedLecture.videoUrl; else thumbnailOnly">
+        <video
+          class="video-main"
+          [src]="selectedLecture.videoUrl"
+          poster="{{ selectedLecture.thumbnailUrl }}"
+          controls
+        ></video>
+        <button class="play-icon play-button" type="button" (click)="openVideo()">
+          <span class="sr-only">Play</span>
+        </button>
+      </ng-container>
+      <ng-template #thumbnailOnly>
+        <img
+          [src]="selectedLecture.thumbnailUrl"
+          [alt]="selectedLecture.title || 'Featured lecture'"
+        />
+        <span class="play-icon"></span>
+      </ng-template>
+    </div>
+    <ng-template #noLectures>
+      <p class="video-empty">No lectures available.</p>
+    </ng-template>
+
+    <h3 class="video-list-title" *ngIf="selectedLecture">{{ selectedLecture.title }}</h3>
+
+    <!-- grid of small videos -->
+    <div class="video-grid" *ngIf="lectures.length; else noLectureGrid">
+      <button
+        class="video-item"
+        type="button"
+        *ngFor="let lecture of lectures"
+        (click)="selectLecture(lecture); openVideo(lecture.videoUrl)"
+      >
+        <img [src]="lecture.thumbnailUrl" [alt]="lecture.title" />
+        <span class="play-icon"></span>
+      </button>
+    </div>
+    <ng-template #noLectureGrid>
+      <p class="video-empty">No lecture thumbnails to show.</p>
+    </ng-template>
+
+    <div class="video-btn-wrap" *ngIf="lectures.length > 8">
+      <button class="video-btn">Load More</button>
+    </div>
+  </div>
+</section>
+
+<section class="podcast-section">
+  <div class="podcast-container">
+    <div class="podcast-header">
+      <h2 class="podcast-heading">Podcasts</h2>
+      <p class="podcast-subtitle">Latest episodes from our experts.</p>
+    </div>
+
+    <div class="podcast-grid" *ngIf="podcasts.length; else noPodcasts">
+      <article class="podcast-card" *ngFor="let podcast of podcasts">
+        <div class="podcast-body">
+          <h3 class="podcast-title">{{ podcast.title }}</h3>
+          <p class="podcast-desc" *ngIf="podcast.description">{{ podcast.description }}</p>
+        </div>
+        <a
+          *ngIf="podcast.audioUrl"
+          class="podcast-link"
+          [href]="podcast.audioUrl"
+          target="_blank"
+          rel="noopener"
+        >
+          Listen
+        </a>
+      </article>
+    </div>
+    <ng-template #noPodcasts>
+      <p class="podcast-empty">No podcasts available.</p>
+    </ng-template>
+  </div>
+</section>
