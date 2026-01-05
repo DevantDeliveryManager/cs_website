@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 Their in-depth knowledge of regulatory frameworks, meticulous attention to compliance requirements, and strong coordination with intermediaries ensured a smooth and timely completion of the IPO process. They demonstrated exceptional competence in handling SEBI regulations, stock exchange filings, due diligence documentation, and corporate governance structuring.
 
 We highly appreciate their professionalism, integrity, and commitment, and we confidently recommend their services for IPO-related matters and other corporate compliance assignments.`,
-      photo: 'assets/images/user.webp',
+      photo: 'assets/images/testimonial_pic.webp',
     },
     {
       name: 'Mr Hurditya',
@@ -36,7 +36,7 @@ We highly appreciate their professionalism, integrity, and commitment, and we co
 Their strategic understanding of capital markets regulations, strong command over SEBI and stock exchange requirements, and structured approach to managing complex timelines were instrumental in the successful completion of the IPO process. They demonstrated exceptional diligence in due diligence reviews, drafting and vetting of offer documents, and seamless coordination with legal counsel, merchant bankers, auditors, and stock exchange authorities.
 
 We value their professionalism, reliability, and advisory mindset, and we would highly recommend their services for IPO advisory, listing compliances, and corporate governance engagements.`,
-      photo: 'assets/images/user.webp',
+      photo: 'assets/images/testimonial_pic2.webp',
     },
   ];
 

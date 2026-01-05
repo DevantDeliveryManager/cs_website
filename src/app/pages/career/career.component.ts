@@ -71,6 +71,30 @@ export class CareerComponent implements OnInit {
     });
   }
 
+
+    // FAQ accordion script (for .faq-item elements in your template)
+  ngAfterViewInit(): void {
+    const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
+
+    faqItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Remove active class from all items
+        faqItems.forEach((el) => el.classList.remove('active'));
+
+        // Add active class back to clicked item if it was not active
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  }
+
+
+
+
+
   // Filtered and visible jobs
   get filteredJobs(): CareerJob[] {
     return this.jobs.filter((job) => {
