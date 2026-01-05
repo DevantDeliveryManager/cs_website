@@ -1054,26 +1054,17 @@ border-radius: 111px 0px 111px 0px;
 
 // Visiting card sec star
 
-.visiting-section{padding:80px 0;background:#f8fbfc;text-align:center;}
-.visiting-section .visiting_heading{text-align: center; font-size: 26px; font-weight: 600; color: #f08b2c; /* orange */ margin-bottom: 8px;}
-.visiting-section p{color:#666;margin-bottom:50px;}
-.service-card{border:none;border-radius:16px;overflow:hidden;transition:transform .3s ease;     box-shadow: rgb(34 47 135 / 90%) 0px 1px 1px 0px inset, rgb(47 47 197 / 25%) 0px 50px 100px -20px, rgb(48 73 165 / 30%) 0px 30px 60px -30px;}
-.service-card:hover{transform:translateY(-8px);}
-.card-img-bg{height:216px;background-size:cover;background-position:center;transition:box-shadow .3s ease;}
-.service-card:hover .card-img-bg{box-shadow:0 20px 40px rgba(0,0,0,.25);}
 
 
-
-
-
-.visiting-section{padding:80px 0;background:#f8fbfc;}
-.visit-card{display:flex;min-height:260px;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.1);}
+.visiting-section{padding:80px 0;background:#f8fbfc; text-align:center;}
+.visit-card{display:flex;min-height:260px;border-radius:12px;overflow:hidden;background:#fff;box-shadow: rgb(34 47 135 / 90%) 0px 1px 1px 0px inset, rgb(47 47 197 / 25%) 0px 50px 100px -20px, rgb(48 73 165 / 30%) 0px 30px 60px -30px; transition: all 0.3s ease;}
+.visit-card:hover { transform:translateY(-8px); }
 .card-left{background:#d6c48a;flex:0 0 38%;display:flex;align-items:center;justify-content:center;padding:25px;text-align:center;}
 .card-left h4{color:#0b3c5d;font-weight:700;margin-bottom:5px;}
 .card-left span{color:#0b3c5d;font-weight:600;border-bottom:2px solid #0b3c5d;padding-bottom:3px;}
 .card-left p{color:#0b3c5d;font-size:14px;margin-top:10px;}
-.card-right{flex:1;padding:25px;}
-.info-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;font-size:15px;color:#333;}
+.card-right{flex:1;padding:20px; display: flex; flex-direction: column; justify-content: center;}
+.info-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;font-size:13px;color:#333; text-align: start;}
 .info-item i{color:#0b3c5d;font-size:18px;}
 
 @media(max-width:768px){.visit-card{flex-direction:column;}.card-left{flex:100%;}}
