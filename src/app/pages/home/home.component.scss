@@ -1031,6 +1031,12 @@ border-radius: 111px 0px 111px 0px;
   }
 
   /* Responsive */
+
+  @media (max-width: 1199px) {
+.why-choose-container { gap: 0px; }
+  }
+
+
   @media (max-width: 900px) {
     .why-choose-container {
       flex-direction: column;
@@ -1055,6 +1061,9 @@ border-radius: 111px 0px 111px 0px;
     }
   }
 
+
+
+
   @media (max-width: 600px) {
     .why-choose-list {
       flex-direction: column;
@@ -1065,6 +1074,9 @@ border-radius: 111px 0px 111px 0px;
       margin-bottom: 12px;
     }
   }
+
+
+
 
 // =========================founder=========================//
  .founders-section {
@@ -1498,7 +1510,7 @@ border-radius: 111px 0px 111px 0px;
     }
 
     .office-card {
-      max-width: 320px;
+      min-width: 62%;
       margin: 0 auto;
     }
   }
@@ -1521,6 +1533,12 @@ border-radius: 111px 0px 111px 0px;
     margin-top: -90px;
 }
 }
+
+ @media (max-width: 480px) {
+  .office-card { min-width: 100%; } 
+
+ }
+
 
 // ============================== //
 
