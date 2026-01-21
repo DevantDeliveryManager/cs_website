@@ -2,7 +2,8 @@
   <div class="ma-header-inner">
     <!-- Logo -->
     <a class="ma-logo" routerLink="/" (click)="closeMenu()">
-      <img src="https://devanttest.in/cs_test/assets/images/logo.webp" alt="MGA Associates" />
+      <img src="../../../../assets/images/logo_ma.webp" alt="MGA Associates" />
+      <span>M&A<span class="logo_asso"> ASSOCIATES</span></span>
    </a>
 
     <!-- Mobile menu toggle -->
@@ -34,6 +35,25 @@
         (click)="closeMenu()"
         >About Us</a
       >
+
+
+      <div class="ma-nav-dropdown">
+        <a 
+          class="ma-nav-link ma-nav-dropdown-toggle"
+          routerLink="/knowledge"
+          routerLinkActive="ma-nav-link-active"
+          (click)="closeMenu()"
+          >
+          Knowledge Bank <i class="fa-solid fa-angle-down ms-1"></i>
+        </a>
+
+        <div class="ma-nav-dropdown-menu">
+          <a class="ma-nav-dropdown-item" href="/recording-webinars">
+            Recording of webinars
+          </a>
+        </div>
+      </div>
+
       <a
         class="ma-nav-link"
         routerLink="/service"
@@ -41,20 +61,49 @@
         (click)="closeMenu()"
         >Our Services</a
       >
-      <a
+      <!-- <a
         class="ma-nav-link"
         routerLink="/practice-area"
         routerLinkActive="ma-nav-link-active"
         (click)="closeMenu()"
-        >Practice Areas</a
-      >
-      <a
-        class="ma-nav-link"
-        routerLink="/resources"
-        routerLinkActive="ma-nav-link-active"
-        (click)="closeMenu()"
-        >Resources</a
-      >
+        >Practice Areas</a 
+      > -->
+
+      <!-- Resources Dropdown -->
+      <div class="ma-nav-dropdown">
+        <a 
+              class="ma-nav-link ma-nav-dropdown-toggle"
+              routerLink="/resources"
+              routerLinkActive="ma-nav-link-active"
+              (click)="closeMenu()"
+        >
+          Resources <i class="fa-solid fa-angle-down ms-1"></i>
+        </a>
+
+        <div class="ma-nav-dropdown-menu">
+          <a class="ma-nav-dropdown-item" href="/resources/sica-vs-ibc">
+            SICA vs. Replaced version in IBC and CA, 2013
+          </a>
+          <a class="ma-nav-dropdown-item" href="/resources/strategic-debt">
+            Strategic debt restructuring scheme 
+          </a>
+          <a class="ma-nav-dropdown-item" href="/resources/s4a">
+            Sustainable structuring of stressed assets (S4A) (RBI)
+          </a>
+          <a class="ma-nav-dropdown-item" href="/resources/liquidation">
+            Liquidation under companies act, 1956 vs. Liquidation under IBC
+          </a>
+          <a class="ma-nav-dropdown-item" href="/resources/bankruptcy-law">
+            Report on the bankruptcy law reforms committee
+          </a>
+          <a class="ma-nav-dropdown-item" href="/resources/joint-lenders">
+            Guidelines on joint lenders’ forum
+          </a>
+        </div>
+      </div>
+
+
+
       <a
         class="ma-nav-link"
         routerLink="/gallery"
