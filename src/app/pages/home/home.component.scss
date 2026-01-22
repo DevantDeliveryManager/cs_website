@@ -1095,7 +1095,7 @@ border-radius: 111px 0px 111px 0px;
     font-size: 26px;
     font-weight: 600;
     color: #f08b2c; /* orange */
-    margin-bottom: 8px;
+    margin-bottom: 30px;
   }
 
   .founders-subtitle {
@@ -1245,6 +1245,9 @@ border-radius: 111px 0px 111px 0px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   }
 
+
+  .office-card a { color: #fff; }
+
   .office-icon-circle {
     position: absolute;
     top: -26px;
@@ -1276,13 +1279,13 @@ border-radius: 111px 0px 111px 0px;
   .office-address {
     font-size: 13px;
     line-height: 1.6;
-    margin-bottom: 18px;
+    margin-bottom: 4px;
     color: #e5e7f5;
   }
 
   .office-btn {
     display: inline-block;
-    margin-top: auto;
+    margin-top: 10px;
     align-self: center;
     padding: 6px 20px;
     font-size: 13px;
@@ -1647,3 +1650,63 @@ border-radius: 111px 0px 111px 0px;
     .faq-answer li {
       margin-bottom: 4px;
     }
+
+
+
+
+// ======================== Founder Sec Start by Sneha ============================
+
+.cs-section { padding: 60px 0; }
+.cs-name { font-weight: 600; color: #093255; margin-bottom: 12px; padding: 0 0 6px 0;
+    border-bottom: 1px solid #fb8304;}
+.cs-text { font-size: 14px; line-height: 1.8; color: #555; text-align: justify;}
+.cs-image-wrap { position: relative; display: flex; justify-content: center; gap: 10px; }
+.cs-img { max-width: 164px; height: auto; object-fit: cover;}
+.left-img { margin-top: 30px;  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.329)); }
+.right-img { margin-top: 30px; filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.384)); }
+.cs-badge { display: inline-flex; justify-content: center; align-items: center; width: 32px;height: 32px; background: #000; color: #fff; border-radius: 4px; font-size: 14px; margin-top: 12px;  }
+
+@media (max-width: 991px) {
+   .cs-image-wrap { flex-direction: column; }
+   .reverse { flex-direction: column-reverse;  }
+   .cs-img { max-width: 160px; margin-bottom: 20px; } 
+     .founders-heading { margin-bottom: 10px; }
+}
+
+@media (max-width: 575px) { .cs-text { font-size: 13px; } }
+@media (max-width: 480px) {
+ .left-img, .right-img { margin-top: 20px; }
+  .cs-section {
+    padding: 20px 0;
+  }
+
+  .srv-section {
+    padding: 40px 0 40px;
+  }
+}
+
+
+
+
+// ======================== Company Slider Sec Start by Sneha ============================
+
+
+.logo-slider-section { padding: 60px 0 30px 0; }
+.logo-slider { overflow: hidden; width: 100%;  }
+.logo-track { display: flex; width: max-content;  animation: scroll-left 22s linear infinite;  }
+
+.logo-track.reversing { animation: scroll-right 22s linear infinite; }
+.logo-slider:hover .logo-track { animation-play-state: paused; }
+.logo-box { min-width: 350px;  padding: 20px; text-align: center;  border-right: 1px solid #e5e5e5; font-weight: 600; }
+.logo-box img { max-width: 120px; margin: 8px auto; display: block; }
+
+@keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes scroll-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+@media (max-width: 991px) { .logo-box { min-width: 250px; } }
+@media (max-width: 575px) { .logo-box { min-width: 180px; }  .logo-box img { max-width: 90px; }  }
+
+
+
+
+

@@ -19,7 +19,7 @@
 
   pointer-events: none;
 
-  background-image: url("https://devanttest.in/cs_test/assets/images/Group S.webp");
+  background-image: url("../../../assets/images/Group S.webp");
 
 }
 
@@ -1084,3 +1084,65 @@ border-radius: 111px 0px 111px 0px;
 @media screen and (max-width: 380px) { 
 .visit-card { flex-direction: column; }
 } 
+
+
+
+
+// ======================== Founder Sec Start by Sneha ============================
+
+.cs-section { padding: 60px 0; }
+.cs-name { font-weight: 600; color: #093255; margin-bottom: 12px; padding: 0 0 6px 0;
+    border-bottom: 1px solid #fb8304;}
+ .founders-heading {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    color: #f08b2c; /* orange */
+    margin-bottom: 30px;
+  }
+    
+.cs-text { font-size: 14px; line-height: 1.8; color: #555; text-align: justify; }
+.cs-image-wrap { position: relative; display: flex; justify-content: center; gap: 10px; }
+.cs-img { max-width: 164px; height: auto; object-fit: cover;}
+.left-img { margin-top: 30px; filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.329)); }
+.right-img { margin-top: 30px;  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.329)); }
+.cs-badge { display: inline-flex; justify-content: center; align-items: center; width: 32px;height: 32px; background: #000; color: #fff; border-radius: 4px; font-size: 14px; margin-top: 12px;  }
+
+
+@media (max-width: 991px) {
+   .cs-image-wrap { flex-direction: column; }
+   .reverse { flex-direction: column-reverse;  }
+   .cs-img { max-width: 160px; margin-bottom: 20px; } 
+   .founders-heading { margin-bottom: 10px; }
+}
+
+@media (max-width: 575px) { .cs-text { font-size: 13px; } }
+@media (max-width: 480px) {
+ .left-img, .right-img { margin-top: 20px; }
+  .cs-section {
+    padding: 20px 0;
+  }
+
+}
+
+
+
+// ==================== Teams Like a Tree Sec Start ===============
+
+
+.org-section { padding: 60px 0; }
+.org-chart { display: flex; flex-direction: column; align-items: center; }
+.org-level { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; margin-top: 45px; position: relative; }
+.org-card { text-align: center; min-width: 140px; position: relative; }
+.org-card p { margin-top: 10px; font-size: 13px; font-weight: 500; }
+.avatar { width: 90px; height: 90px; border-radius: 50%; overflow: hidden; margin: 0 auto; background: #ffffff; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.root .avatar { border: 6px solid #6b4f2c; }
+.orange .avatar { border: 5px solid #f36f21; }
+.yellow .avatar { border: 5px solid #f7b500; }
+.blue .avatar { border: 5px solid #2f80ed; }
+.teal .avatar { border: 5px solid #17c3b2; }
+.green .avatar { border: 5px solid #6ab04c; }
+.org-level::before { content: ""; position: absolute; top: -25px; width: 100%; height: 2px; background: #dcdcdc; }
+.org-card::before { content: ""; position: absolute; top: -25px; left: 50%; width: 2px; height: 25px; background: #dcdcdc; }
+@media (max-width: 768px) { .avatar { width: 65px; height: 65px; } .org-card p { font-size: 12px; } }

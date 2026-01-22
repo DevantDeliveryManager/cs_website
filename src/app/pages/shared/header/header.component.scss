@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   z-index: 20;
-  padding: 18px 0;
+  padding: 25px 0 18px 0;
 }
 
 .ma-header-inner {
@@ -26,10 +26,12 @@
 }
 
 .ma-logo img {
-  width:137px;
+  width: 60px;
 
   object-fit: contain;
 }
+
+.logo_asso { color: #edb96f; }
 
 .ma-logo-text {
   font-size: 14px;
@@ -163,3 +165,74 @@
     color: #001238;
   }
 }
+
+
+
+
+/* ===== Knowledge Bank Dropdown ===== */
+.ma-nav-dropdown { position: relative; }
+
+.ma-nav-dropdown-toggle { cursor: pointer; display: flex; align-items: center;}
+
+/* Dropdown box */
+.ma-nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-radius: 6px;
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+/* Dropdown item */
+.ma-nav-dropdown-item {
+  display: block;
+  padding: 10px 18px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ma-nav-dropdown-item:hover {
+  background: #f5f5f5;
+  color: #000;
+}
+
+/* Hover open (desktop) */
+.ma-nav-dropdown:hover .ma-nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ===== Mobile Responsive ===== */
+
+@media (max-width: 991px) {
+
+.ma-nav-dropdown-toggle  { justify-content: center; }
+
+.ma-nav-dropdown:hover .ma-nav-dropdown-menu {position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: #ffffffdb;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center; 
+        display: contents;
+  }
+
+ .ma-nav-dropdown:focus-within .ma-nav-dropdown-menu { opacity: 1; visibility: visible; }
+.ma-nav-dropdown-item { padding: 10px 0; font-size: 15px; white-space: normal; color: #ffffff; }
+}
+

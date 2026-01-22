@@ -78,8 +78,8 @@
 
     .appointment-card {
       position: absolute;
-      top: 0px;        /* adjust up/down */
-      right: 6%;        /* adjust left/right */
+      top: -65px;       
+      right: 6%;      
       width: 360px;
       background-color: #ffffff;
       border-radius: 32px;
@@ -205,11 +205,10 @@ background-image: linear-gradient(180deg, #050a1eb5, #020514fa), url(https://dev
 
     .footer-inner {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 90px auto 0;
       display: flex;
-      justify-content: space-between;
-      gap: 70px;
-      margin-top: 90px;
+      justify-content: start;
+      gap: 270px;
     }
 
     .footer-left {
@@ -366,7 +365,17 @@ background-image: linear-gradient(180deg, #050a1eb5, #020514fa), url(https://dev
         gap: 24px;
       }
     }
-.footerlogo{
-      width: 155px;
+.footerlogo {
+    width: 90px;
     margin-bottom: 17px;
 }
+.footer-left a  {  
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #fff;
+}    
+
+.footer-left a span { font-size: 1.5rem; }
+.logo_asso { color: #eeb96b; }
+
