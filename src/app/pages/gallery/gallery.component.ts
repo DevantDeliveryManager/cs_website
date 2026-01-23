@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 interface GalleryItem {
   src: string;
   alt: string;
+  name?: string; 
 }
 
 interface Testimonial {
@@ -58,27 +59,29 @@ We value their professionalism, reliability, and advisory mindset, and we would 
     this.loadGallery();
   }
 
-  private loadTeam(): void {
-    this.http
-      .get<{ data?: Array<{ name?: string; photoUrl?: string }> }>(
-        `${environment.apiBaseUrl}/get-team`
-      )
-      .subscribe({
-        next: (res) => {
-          const mapped =
-            res.data?.map((member) => ({
-              src: member.photoUrl || '',
-              alt: member.name || 'Team photo',
-            })) || [];
+private loadTeam(): void {
+  this.http
+    .get<{ data?: Array<{ name?: string; photoUrl?: string }> }>(
+      `${environment.apiBaseUrl}/get-team`
+    )
+    .subscribe({
+      next: (res) => {
+        const mapped =
+          res.data?.map((member) => ({
+            src: member.photoUrl || '',
+            alt: member.name || 'Team photo',
+            name: member.name || 'Team member', //
+          })) || [];
 
-          this.teamItems = mapped.filter((m) => !!m.src);
-          this.currentIndex = 0;
-        },
-        error: () => {
-          this.teamItems = [];
-        },
-      });
-  }
+        this.teamItems = mapped.filter((m) => !!m.src);
+        this.currentIndex = 0;
+      },
+      error: () => {
+        this.teamItems = [];
+      },
+    });
+}
+
 
   private loadGallery(): void {
     this.http
@@ -186,4 +189,13 @@ We value their professionalism, reliability, and advisory mindset, and we would 
   get hasHiddenGalleryItems(): boolean {
     return this.galleryItems.length > this.visibleGalleryItemsCount;
   }
+
+
+
+
+
+
+
+
+
 }

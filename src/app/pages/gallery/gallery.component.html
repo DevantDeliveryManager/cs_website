@@ -33,7 +33,17 @@
           *ngFor="let item of displayItems; let i = index"
           [ngClass]="getPositionClass(i)"
         >
-          <img [src]="item.src" [alt]="item.alt" />
+          <div class="gallery-image-wrap">
+            <img [src]="item.src" [alt]="item.name || 'Team member'" />
+          </div>
+
+          <h3 class="gallery-name">
+            {{ item.name || 'Team member' }}
+          </h3>
+
+          <!-- <p class="gallery-role" *ngIf="item.role">
+            {{ item.role }}
+          </p> -->
         </div>
       </ng-container>
       <ng-template #noSliderItems>

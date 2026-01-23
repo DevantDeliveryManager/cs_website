@@ -273,7 +273,6 @@ margin-top: 50px;
   width: 180px;
   height: 250px;
   border-radius: 18px;
-  overflow: hidden;
   background: #ffffff;
   box-shadow: 0 16px 35px rgba(5, 20, 60, 0.16);
   transform-origin: center bottom;
@@ -284,7 +283,7 @@ margin-top: 50px;
     opacity 0.4s ease,
     box-shadow 0.4s ease,
     border-color 0.4s ease;
-  border: 2px solid transparent;
+  border: 2px solid transparent; 
 }
 
 .gallery-card img {
@@ -292,11 +291,15 @@ margin-top: 50px;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 16px;           
+  border: 2px solid #2b548a;     
+  box-sizing: border-box;
   transition:
     transform 0.4s ease,
     filter 0.4s ease;
   filter: grayscale(0.3) brightness(1.05);
 }
+
 
 .gallery-card::after {
   content: '';
@@ -472,6 +475,49 @@ margin-top: 50px;
   .gallery-card.is-next,
   .gallery-card.is-next-2 {
     display: none;
+  }
+}
+
+.gallery-image-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+/* Name below image */
+.gallery-name {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #1f2a44;
+  line-height: 1.2;
+}
+
+/* Optional role */
+.gallery-role {
+  margin-top: 4px;
+  font-size: 13px;
+  text-align: center;
+  color: #6c728f;
+}
+
+/* Make sure text doesn't get affected by coverflow fade */
+.gallery-card.is-prev .gallery-name,
+.gallery-card.is-next .gallery-name,
+.gallery-card.is-prev-2 .gallery-name,
+.gallery-card.is-next-2 .gallery-name {
+  opacity: 0.6;
+}
+
+.gallery-card.is-hidden .gallery-name,
+.gallery-card.is-hidden .gallery-role {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .gallery-name {
+    font-size: 15px;
   }
 }
 
