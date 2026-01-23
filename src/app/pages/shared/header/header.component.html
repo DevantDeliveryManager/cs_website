@@ -51,15 +51,19 @@
           <a class="ma-nav-dropdown-item" href="/recording-webinars">
             Recording of webinars
           </a>
+          <a class="ma-nav-dropdown-item" href="/presentation">
+            presentations
+          </a>
         </div>
       </div>
+
 
       <a
         class="ma-nav-link"
         routerLink="/service"
         routerLinkActive="ma-nav-link-active"
         (click)="closeMenu()"
-        >Our Services</a
+        >Our Services &trade;</a
       >
       <!-- <a
         class="ma-nav-link"
@@ -69,6 +73,68 @@
         >Practice Areas</a 
       > -->
 
+      <div class="ma-nav-dropdown">
+        <a
+          class="ma-nav-link ma-nav-dropdown-toggle"
+          routerLink="/rules"
+          routerLinkActive="ma-nav-link-active"
+          (click)="closeMenu()"
+        >
+          Related Rules and Regulation
+          <i class="fa-solid fa-angle-down ms-1"></i>
+        </a>
+
+        <div class="ma-nav-dropdown-menu">
+
+          <!-- SUB DROPDOWN -->
+          <div class="ma-nav-sub-dropdown">
+            <a class="ma-nav-dropdown-item ma-sub-toggle">
+              Advanced Rules & Procedure of NCLT and NCLAT with Advance Search
+              <i class="fa-solid ms-2 fa-angle-right"></i>
+            </a>
+
+            <div class="ma-nav-submenu">
+              <a class="ma-nav-submenu-item" href="/nclat">NCLAT</a>
+              <a class="ma-nav-submenu-item" href="/nclt">NCLT</a>
+            </div>
+          </div>
+
+          <!-- NORMAL ITEMS -->
+          <a class="ma-nav-dropdown-item" href="/rdba-act-1993">
+            The Recovery of Debts due to Banks and Financial Institutions Act, 1993
+          </a>
+
+          <a class="ma-nav-dropdown-item" href="/companies-act-2013">
+            Companies Act, 2013
+          </a>
+
+          <a class="ma-nav-dropdown-item" href="/llp-act-2008">
+            Limited Liability Partnership Act, 2008
+          </a>
+
+          <a class="ma-nav-dropdown-item" href="/indian-contract-act-1872">
+            The Indian Contracts Act, 1872
+          </a>
+
+          <a class="ma-nav-dropdown-item" href="/partnership-act-1932">
+            The Partnership Act, 1932
+          </a>
+
+          <a class="ma-nav-dropdown-item" href="/sale-of-goods-act-1930">
+            The Sale of Goods Act, 1930
+          </a>
+
+          <a class="ma-nav-dropdown-item" href="/transfer-of-property-act-1882">
+            Transfer of Property Act, 1882
+          </a>
+
+        </div>
+      </div>
+
+
+
+
+
       <!-- Resources Dropdown -->
       <div class="ma-nav-dropdown">
         <a 
@@ -77,7 +143,7 @@
               routerLinkActive="ma-nav-link-active"
               (click)="closeMenu()"
         >
-          Resources <i class="fa-solid fa-angle-down ms-1"></i>
+          Resources Center<i class="fa-solid fa-angle-down ms-1"></i>
         </a>
 
         <div class="ma-nav-dropdown-menu">

@@ -9,7 +9,7 @@
 }
 
 .ma-header-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -179,6 +179,7 @@
   position: absolute;
   top: 100%;
   left: 0;
+  width: 287px;
   min-width: 220px;
   background: #ffffff;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
@@ -193,12 +194,12 @@
 
 /* Dropdown item */
 .ma-nav-dropdown-item {
-  display: block;
-  padding: 10px 18px;
-  font-size: 14px;
-  color: #333;
-  text-decoration: none;
-  white-space: nowrap;
+display: block;
+    padding: 10px 18px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    white-space: normal;
 }
 
 .ma-nav-dropdown-item:hover {
@@ -236,3 +237,47 @@
 .ma-nav-dropdown-item { padding: 10px 0; font-size: 15px; white-space: normal; color: #ffffff; }
 }
 
+/* Sub Dropdown Wrapper */
+.ma-nav-sub-dropdown {
+  position: relative;
+}
+
+/* Right arrow alignment */
+.ma-sub-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Sub menu container */
+.ma-nav-submenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 1001;
+}
+
+/* Show sub menu on hover */
+.ma-nav-sub-dropdown:hover .ma-nav-submenu {
+  display: block;
+}
+
+/* Sub menu links */
+.ma-nav-submenu-item {
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hover effect */
+.ma-nav-submenu-item:hover {
+  background-color: #f5f5f5;
+  color: #07328f;
+}
