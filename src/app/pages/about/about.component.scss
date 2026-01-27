@@ -1146,3 +1146,35 @@ border-radius: 111px 0px 111px 0px;
 .org-level::before { content: ""; position: absolute; top: -25px; width: 100%; height: 2px; background: #dcdcdc; }
 .org-card::before { content: ""; position: absolute; top: -25px; left: 50%; width: 2px; height: 25px; background: #dcdcdc; }
 @media (max-width: 768px) { .avatar { width: 65px; height: 65px; } .org-card p { font-size: 12px; } }
+
+
+
+
+
+// ======================== Khushboo Partner Sec Start ===============
+
+
+.partner-section { padding: 60px 0; background-color: #ffffff; }
+
+.partner-image-wrapper { position: relative; display: inline-block; padding: 4px; }
+
+.partner-image-wrapper::before { content: ""; position: absolute; bottom: 0; left: 0; width: 70%; height: 70%; background-color: #edb96f; z-index: -1; }
+
+.partner-image { width: 100%; max-width: 300px; border-radius: 10px; object-fit: cover; border: 2px solid #f08b2c;}
+
+.partner-content { padding-left: 20px; }
+
+.partner-label { font-size: 14px; letter-spacing: 2px; font-weight: 600; color: #000; margin-bottom: 6px; }
+
+.partner-name {font-weight: 700; margin-bottom: 18px; color: #093260;  border-bottom: 1px solid #fb8304;
+    padding-bottom: 6px; }
+
+.partner-description { font-size: 15px; line-height: 1.8; color: #222; text-align: justify;}
+
+@media (max-width: 991px) {
+  .partner-section { padding: 20px 0 30px;}
+  .partner-content { padding-left: 0; margin-top: 30px; text-align: center; }
+  .partner-description { font-size: 14px; }
+}
+
+
